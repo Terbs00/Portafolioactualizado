@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-  base: '/Portafolio/', 
+  base: '/Portafolioactualizado/', 
   build: {
     outDir: 'docs',   
     emptyOutDir: true
