@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Portafolio | Sebastián</title>
+    <meta name="description" content="Portafolio profesional de Sebastián: proyectos, habilidades y contacto." />
+    <link rel="icon" href="/vite.svg" />
+  </head>
+  <body>
+    
+    <header class="header">
+      <div class="wrap">
+        <div class="brand">Sebastián</div>
+        <nav class="nav">
+          <a href="#sobre-mi">Sobre mí</a>
+          <a href="#proyectos">Proyectos</a>
+          <a href="#contacto">Contacto</a>
+        </nav>
+      </div>
+    </header>
+
+    
+    <section id="sobre-mi" class="hero">
+      <div class="wrap hero__grid">
+        <div>
+          <h1>Desarrollador Frontend</h1>
+          <p class="lead">
+            Construyo interfaces limpias, accesibles y rápidas. Me enfoco en buenas prácticas y
+            experiencias agradables en cualquier dispositivo.
+          </p>
+          <div class="cta">
+            <a class="btn" href="#proyectos">Ver proyectos</a>
+            <a class="btn btn--ghost" href="#contacto">Contactar</a>
+          </div>
+        </div>
+        <div class="avatar">
+          <img id="avatar" alt="Foto de Sebastián" />
+        </div>
+      </div>
+    </section>
+
+    
+    <section id="proyectos" class="section">
+      <div class="wrap">
+        <h2>Proyectos</h2>
+        <div id="grid-proyectos" class="grid"></div>
+      </div>
+    </section>
+
+    
+    <section id="contacto" class="section section--alt">
+      <div class="wrap">
+        <h2>Contacto</h2>
+        <form class="form" onsubmit="event.preventDefault(); alert('¡Gracias! Te responderé pronto.');">
+          <div class="field">
+            <label for="nombre">Nombre</label>
+            <input id="nombre" type="text" placeholder="Tu nombre" required />
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" type="email" placeholder="correo@ejemplo.com" required />
+          </div>
+          <div class="field field--full">
+            <label for="mensaje">Mensaje</label>
+            <textarea id="mensaje" placeholder="Escribe tu mensaje..." required></textarea>
+          </div>
+          <div class="actions">
+            <button class="btn" type="submit">Enviar</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    
+    <footer class="footer">
+      <div class="wrap">
+        <small>© <span id="year"></span> Sebastián · Hecho con Vite + LESS</small>
+      </div>
+    </footer>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

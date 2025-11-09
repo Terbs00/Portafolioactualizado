@@ -1,0 +1,124 @@
+
+@bg: #f7f9fb;
+@panel: #ffffff;
+@border: #e6eef5;
+@text: #1d2939;
+@muted: #6b7280;
+@accent: #10b981;       
+@accent-2: #0ea371;    
+
+@radius: 16px;
+@shadow: 0 10px 30px rgba(17, 24, 39, .06);
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  color: @text;
+  background:
+    radial-gradient(600px 400px at 10% -10%, fade(@accent, 18%), transparent) @bg;
+}
+
+
+.wrap { width: min(1100px, 92%); margin-inline: auto; }
+.lead { font-size: 1.05rem; color: @muted; }
+.muted { color: @muted; }
+.link { color: @accent-2; text-decoration: none; border-bottom: 1px solid fade(@accent-2, 40%); }
+.link:hover { border-bottom-color: @accent-2; }
+
+
+.header {
+  position: sticky; top: 0; z-index: 5;
+  background: fade(@panel, 95%);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid @border;
+}
+.header .wrap {
+  display: flex; align-items: center; gap: 16px; padding: 14px 0;
+}
+.brand {
+  font-weight: 800; letter-spacing: .4px; color: @text;
+}
+.nav { margin-left: auto; display: flex; gap: 10px; }
+.nav a {
+  color: @text; padding: 8px 12px; border-radius: 10px; text-decoration: none;
+}
+.nav a:hover { background: fade(@accent, 12%); }
+
+
+.hero { padding: 56px 0 28px; }
+.hero__grid {
+  display: grid; gap: 28px; align-items: center;
+  grid-template-columns: 1.2fr .8fr;
+}
+.hero h1 { margin: 0 0 10px; font-size: clamp(28px, 4vw, 44px); color: @accent-2; }
+.cta { display: flex; gap: 12px; margin-top: 16px; }
+.btn {
+  display: inline-block; padding: 10px 16px; border-radius: 12px; border: 1px solid @accent;
+  background: @accent; color: #fff; box-shadow: @shadow; cursor: pointer; text-decoration: none;
+  transition: transform .15s ease, filter .15s ease;
+}
+.btn:hover { transform: translateY(-2px); filter: brightness(1.05); }
+.btn--ghost { background: transparent; color: @accent-2; border-color: fade(@accent-2, 40%); }
+.btn--ghost:hover { background: fade(@accent, 10%); }
+
+.avatar {
+  justify-self: center; background: @panel; border: 1px solid @border; border-radius: @radius; padding: 16px; box-shadow: @shadow;
+}
+.avatar img {
+  display: block; width: 180px; height: 180px; border-radius: 50%;
+  object-fit: cover; margin: 6px auto 0;
+  border: 3px solid fade(@accent, 45%);
+}
+
+
+.section { padding: 44px 0; }
+.section--alt { background: #f1f5f9; border-top: 1px solid @border; border-bottom: 1px solid @border; }
+h2 { margin: 0 0 14px; color: @text; }
+
+
+.grid {
+  display: grid; gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  margin-top: 10px;
+}
+.card {
+  background: @panel; border: 1px solid @border; border-radius: @radius;
+  box-shadow: @shadow; padding: 18px; transition: transform .15s ease, box-shadow .15s ease;
+}
+.card:hover { transform: translateY(-4px); box-shadow: 0 16px 32px rgba(17, 24, 39, .10); }
+.card__head { display: flex; align-items: baseline; gap: 10px; justify-content: space-between; }
+.card h3 { margin: 0 0 6px; color: @text; font-size: 1.1rem; }
+.badge {
+  padding: 6px 10px; border-radius: 999px; font-size: .8rem;
+  background: fade(@accent, 14%); color: @accent-2; border: 1px solid fade(@accent, 30%);
+}
+.card__actions { display: flex; gap: 14px; margin-top: 12px; }
+
+
+.form {
+  display: grid; gap: 16px; grid-template-columns: 1fr 1fr;
+  background: @panel; border: 1px solid @border; border-radius: @radius; padding: 18px; box-shadow: @shadow;
+}
+.field { display: grid; gap: 6px; }
+.field--full { grid-column: 1 / -1; }
+label { color: @muted; font-size: .92rem; }
+input, textarea {
+  width: 100%; padding: 10px 12px; border-radius: 12px; border: 1px solid @border;
+  background: #fff; color: @text; outline: none; transition: border-color .15s ease, box-shadow .15s ease;
+}
+input:focus, textarea:focus { border-color: @accent; box-shadow: 0 0 0 3px fade(@accent, 25%); }
+textarea { min-height: 120px; resize: vertical; }
+.actions { grid-column: 1 / -1; }
+
+
+.footer { padding: 22px 0; text-align: center; color: @muted; border-top: 1px solid @border; }
+
+@media (max-width: 900px) {
+  .hero__grid { grid-template-columns: 1fr; text-align: left; }
+  .cta { justify-content: flex-start; }
+}
+@media (max-width: 640px) {
+  .form { grid-template-columns: 1fr; }
+}
