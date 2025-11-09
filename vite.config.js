@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-  base: '/Portafolioactualizado/', 
+  base: '/https://terbs00.github.io/Portafolioactualizado/', 
   build: {
     outDir: 'docs',   
     emptyOutDir: true
